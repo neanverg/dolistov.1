@@ -196,41 +196,50 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 12.0, 12.0, 12.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    const Icon(
-                                      Icons.help_outline_rounded,
-                                      color: Color(0xFF57636C),
-                                      size: 24.0,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Help',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color: const Color(0xFF14181B),
-                                              fontSize: 14.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('Help');
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      const Icon(
+                                        Icons.help_outline_rounded,
+                                        color: Color(0xFF57636C),
+                                        size: 24.0,
                                       ),
-                                    ),
-                                    const Expanded(
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0.90, 0.00),
-                                        child: Icon(
-                                          Icons.arrow_forward_ios,
-                                          color: Color(0xFF57636C),
-                                          size: 18.0,
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Help',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                color: const Color(0xFF14181B),
+                                                fontSize: 14.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      const Expanded(
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.90, 0.00),
+                                          child: Icon(
+                                            Icons.arrow_forward_ios,
+                                            color: Color(0xFF57636C),
+                                            size: 18.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

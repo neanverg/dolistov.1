@@ -14,3 +14,4 @@ export '/home_page/home_page_widget.dart' show HomePageWidget;
 export '/calendar/calendar_widget.dart' show CalendarWidget;
 export '/add_tasks/add_tasks_widget.dart' show AddTasksWidget;
 export '/task/task_widget.dart' show TaskWidget;
+export '/help/help_widget.dart' show HelpWidget;

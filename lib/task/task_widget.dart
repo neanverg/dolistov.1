@@ -1,5 +1,7 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -641,45 +643,34 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(1.00, -1.00),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        3.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Tasks',
-                                      style: FlutterFlowTheme.of(context)
-                                          .displaySmall,
-                                    ),
+                                FlutterFlowIconButton(
+                                  borderRadius: 20.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 40.0,
+                                  icon: Icon(
+                                    Icons.arrow_back,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    size: 24.0,
                                   ),
-                                ),
-                                FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context.safePop();
                                   },
-                                  text: 'Create Task',
-                                  options: FFButtonOptions(
-                                    width: 130.0,
-                                    height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          color: Colors.white,
-                                        ),
-                                    elevation: 2.0,
-                                    borderSide: const BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                ),
+                                Expanded(
+                                  child: Align(
+                                    alignment:
+                                        const AlignmentDirectional(0.00, -1.00),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 30.0, 0.0),
+                                      child: Text(
+                                        'Tasks',
+                                        textAlign: TextAlign.start,
+                                        style: FlutterFlowTheme.of(context)
+                                            .displaySmall,
+                                      ),
                                     ),
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: const Color(0xFF2B16ED),
-                                    hoverTextColor: Colors.white,
                                   ),
                                 ),
                               ],
@@ -702,13 +693,11 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                     unselectedLabelColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryText,
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).accent1,
                                     unselectedBackgroundColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                     borderColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                        FlutterFlowTheme.of(context).error,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
                                     elevation: 0.0,
@@ -768,9 +757,9 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Padding(
+                                                      const Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -779,9 +768,6 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                         child: Icon(
                                                           Icons
                                                               .library_add_check_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
                                                           size: 36.0,
                                                         ),
                                                       ),
@@ -826,7 +812,7 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                       12.0,
                                                                       0.0),
                                                           child: Text(
-                                                            '3',
+                                                            '0',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -896,50 +882,56 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                           _model.checkboxValue1 =
                                                                               newValue!);
                                                                     },
-                                                                    activeColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primary,
                                                                     checkColor:
                                                                         Colors
                                                                             .white,
                                                                   ),
                                                                 ),
                                                                 Expanded(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            12.0,
-                                                                            8.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Title',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                fontWeight: FontWeight.w500,
+                                                                  child: StreamBuilder<
+                                                                      List<
+                                                                          TasksRecord>>(
+                                                                    stream:
+                                                                        queryTasksRecord(),
+                                                                    builder:
+                                                                        (context,
+                                                                            snapshot) {
+                                                                      // Customize what your widget looks like when it's loading.
+                                                                      if (!snapshot
+                                                                          .hasData) {
+                                                                        return Center(
+                                                                          child:
+                                                                              SizedBox(
+                                                                            width:
+                                                                                50.0,
+                                                                            height:
+                                                                                50.0,
+                                                                            child:
+                                                                                CircularProgressIndicator(
+                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                FlutterFlowTheme.of(context).primary,
                                                                               ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      }
+                                                                      List<TasksRecord>
+                                                                          columnTasksRecordList =
+                                                                          snapshot
+                                                                              .data!;
+                                                                      return Column(
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children: [
-                                                                          Padding(
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: List.generate(
+                                                                            columnTasksRecordList.length,
+                                                                            (columnIndex) {
+                                                                          final columnTasksRecord =
+                                                                              columnTasksRecordList[columnIndex];
+                                                                          return Padding(
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 8.0,
@@ -947,37 +939,16 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              'Date',
-                                                                              style: FlutterFlowTheme.of(context).labelMedium,
+                                                                              columnTasksRecord.taskname,
+                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                  ),
                                                                             ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Container(
-                                                                              height: 28.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                              alignment: const AlignmentDirectional(0.00, 0.00),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                child: SelectionArea(
-                                                                                    child: Text(
-                                                                                  'Category',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                )),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ],
+                                                                          );
+                                                                        }),
+                                                                      );
+                                                                    },
                                                                   ),
                                                                 ),
                                                               ],
@@ -1043,9 +1014,9 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Padding(
+                                                      const Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     4.0,
                                                                     0.0,
@@ -1054,9 +1025,6 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                         child: Icon(
                                                           Icons
                                                               .library_add_check_rounded,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
                                                           size: 36.0,
                                                         ),
                                                       ),
@@ -1101,7 +1069,7 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                       12.0,
                                                                       0.0),
                                                           child: Text(
-                                                            '12',
+                                                            '0',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium,
@@ -1171,50 +1139,56 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                           _model.checkboxValue2 =
                                                                               newValue!);
                                                                     },
-                                                                    activeColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primary,
                                                                     checkColor:
                                                                         Colors
                                                                             .white,
                                                                   ),
                                                                 ),
                                                                 Expanded(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                            12.0,
-                                                                            8.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Title',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                fontWeight: FontWeight.w500,
+                                                                  child: StreamBuilder<
+                                                                      List<
+                                                                          TasksRecord>>(
+                                                                    stream:
+                                                                        queryTasksRecord(),
+                                                                    builder:
+                                                                        (context,
+                                                                            snapshot) {
+                                                                      // Customize what your widget looks like when it's loading.
+                                                                      if (!snapshot
+                                                                          .hasData) {
+                                                                        return Center(
+                                                                          child:
+                                                                              SizedBox(
+                                                                            width:
+                                                                                50.0,
+                                                                            height:
+                                                                                50.0,
+                                                                            child:
+                                                                                CircularProgressIndicator(
+                                                                              valueColor: AlwaysStoppedAnimation<Color>(
+                                                                                FlutterFlowTheme.of(context).primary,
                                                                               ),
-                                                                        ),
-                                                                      ),
-                                                                      Row(
+                                                                            ),
+                                                                          ),
+                                                                        );
+                                                                      }
+                                                                      List<TasksRecord>
+                                                                          columnTasksRecordList =
+                                                                          snapshot
+                                                                              .data!;
+                                                                      return Column(
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children: [
-                                                                          Padding(
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: List.generate(
+                                                                            columnTasksRecordList.length,
+                                                                            (columnIndex) {
+                                                                          final columnTasksRecord =
+                                                                              columnTasksRecordList[columnIndex];
+                                                                          return Padding(
                                                                             padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 12.0,
                                                                                 8.0,
@@ -1222,36 +1196,16 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                                 0.0),
                                                                             child:
                                                                                 Text(
-                                                                              'Date',
-                                                                              style: FlutterFlowTheme.of(context).labelMedium,
+                                                                              columnTasksRecord.taskname,
+                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                    fontFamily: 'Readex Pro',
+                                                                                    fontWeight: FontWeight.w500,
+                                                                                  ),
                                                                             ),
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                8.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Container(
-                                                                              height: 28.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                              alignment: const AlignmentDirectional(0.00, 0.00),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                child: Text(
-                                                                                  'Category',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ],
+                                                                          );
+                                                                        }),
+                                                                      );
+                                                                    },
                                                                   ),
                                                                 ),
                                                               ],

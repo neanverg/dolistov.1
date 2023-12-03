@@ -134,6 +134,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'task',
           path: '/task',
           builder: (context, params) => const TaskWidget(),
+        ),
+        FFRoute(
+          name: 'Help',
+          path: '/help',
+          builder: (context, params) => const HelpWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
