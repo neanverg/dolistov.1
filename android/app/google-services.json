@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "810006972875",
+    "project_id": "dolisto-c1b28",
+    "storage_bucket": "dolisto-c1b28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810006972875:android:261bd093e9a38087484e4e",
+        "android_client_info": {
+          "package_name": "com.mycompany.dolisto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArnQtmzKB---dgzjC3U7BV_dGAbM_ikGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810006972875:android:ff22c7a7445c64d5484e4e",
+        "android_client_info": {
+          "package_name": "com.ordinario.dolisto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArnQtmzKB---dgzjC3U7BV_dGAbM_ikGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
