@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,22 @@ class _HelpWidgetState extends State<HelpWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).error,
+          automaticallyImplyLeading: true,
+          title: Text(
+            'DoListo',
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Readex Pro',
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+          actions: const [],
+          centerTitle: true,
+          elevation: 4.0,
+        ),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -188,6 +205,57 @@ class _HelpWidgetState extends State<HelpWidget> {
                           fontFamily: 'Readex Pro',
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      context.safePop();
+                    },
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      context.safePop();
+                    },
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.00, 0.00),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 20.0,
+                    borderWidth: 1.0,
+                    buttonSize: 40.0,
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      size: 24.0,
+                    ),
+                    onPressed: () async {
+                      context.safePop();
+                    },
                   ),
                 ),
               ],

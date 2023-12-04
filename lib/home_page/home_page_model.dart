@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'home_page_widget.dart' show HomePageWidget;
 import 'package:flutter/material.dart';
@@ -10,6 +11,12 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
+
+  // State field(s) for Checkbox widget.
+
+  Map<TasksRecord, bool> checkboxValueMap = {};
+  List<TasksRecord> get checkboxCheckedItems =>
+      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   /// Initialization and disposal methods.
 

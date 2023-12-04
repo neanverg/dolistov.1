@@ -90,6 +90,7 @@ class _CalendarWidgetState extends State<CalendarWidget>
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
                       color: FlutterFlowTheme.of(context).secondaryBackground,
+                      fontWeight: FontWeight.w500,
                     ),
               ),
             ),

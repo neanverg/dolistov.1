@@ -31,6 +31,50 @@ class _AddTasksWidgetState extends State<AddTasksWidget> {
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode2!.addListener(
+      () async {
+        final datePickedDate = await showDatePicker(
+          context: context,
+          initialDate: getCurrentTimestamp,
+          firstDate: DateTime(1900),
+          lastDate: DateTime(2050),
+          builder: (context, child) {
+            return wrapInMaterialDatePickerTheme(
+              context,
+              child!,
+              headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+              headerForegroundColor: FlutterFlowTheme.of(context).info,
+              headerTextStyle:
+                  FlutterFlowTheme.of(context).headlineLarge.override(
+                        fontFamily: 'Outfit',
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+              pickerBackgroundColor:
+                  FlutterFlowTheme.of(context).secondaryBackground,
+              pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+              selectedDateTimeBackgroundColor:
+                  FlutterFlowTheme.of(context).primary,
+              selectedDateTimeForegroundColor:
+                  FlutterFlowTheme.of(context).info,
+              actionButtonForegroundColor:
+                  FlutterFlowTheme.of(context).primaryText,
+              iconSize: 24.0,
+            );
+          },
+        );
+
+        if (datePickedDate != null) {
+          safeSetState(() {
+            _model.datePicked = DateTime(
+              datePickedDate.year,
+              datePickedDate.month,
+              datePickedDate.day,
+            );
+          });
+        }
+      },
+    );
   }
 
   @override
@@ -71,6 +115,7 @@ class _AddTasksWidgetState extends State<AddTasksWidget> {
                     fontFamily: 'Outfit',
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     fontSize: 22.0,
+                    fontWeight: FontWeight.w500,
                   ),
             ),
           ),

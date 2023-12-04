@@ -668,7 +668,12 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                         'Tasks',
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
-                                            .displaySmall,
+                                            .displaySmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                       ),
                                     ),
                                   ),

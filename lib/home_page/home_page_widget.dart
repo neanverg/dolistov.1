@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -412,7 +411,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Text(
                                             columnTasksRecord.taskname,
@@ -431,27 +430,44 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall,
                                           ),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 8.0, 8.0),
-                                            child: FlutterFlowIconButton(
-                                              borderColor: Colors.transparent,
-                                              borderRadius: 30.0,
-                                              buttonSize: 40.0,
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              icon: Icon(
-                                                Icons.favorite_border_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 20.0,
+                                          Theme(
+                                            data: ThemeData(
+                                              checkboxTheme: CheckboxThemeData(
+                                                visualDensity:
+                                                    VisualDensity.compact,
+                                                materialTapTargetSize:
+                                                    MaterialTapTargetSize
+                                                        .shrinkWrap,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          4.0),
+                                                ),
                                               ),
-                                              onPressed: () {
-                                                print('IconButton pressed ...');
+                                              unselectedWidgetColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                            ),
+                                            child: Checkbox(
+                                              value: _model.checkboxValueMap[
+                                                  columnTasksRecord] ??= false,
+                                              onChanged: (newValue) async {
+                                                setState(() =>
+                                                    _model.checkboxValueMap[
+                                                            columnTasksRecord] =
+                                                        newValue!);
+                                                if (newValue!) {
+                                                  await columnTasksRecord
+                                                      .reference
+                                                      .delete();
+                                                }
                                               },
+                                              activeColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              checkColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .info,
                                             ),
                                           ),
                                         ],
