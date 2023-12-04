@@ -20,13 +20,13 @@ class TasksRecord extends FirestoreRecord {
   bool hasTaskname() => _taskname != null;
 
   // "taskdate" field.
-  String? _taskdate;
-  String get taskdate => _taskdate ?? '';
+  DateTime? _taskdate;
+  DateTime? get taskdate => _taskdate;
   bool hasTaskdate() => _taskdate != null;
 
   void _initializeFields() {
     _taskname = snapshotData['taskname'] as String?;
-    _taskdate = snapshotData['taskdate'] as String?;
+    _taskdate = snapshotData['taskdate'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -64,7 +64,7 @@ class TasksRecord extends FirestoreRecord {
 
 Map<String, dynamic> createTasksRecordData({
   String? taskname,
-  String? taskdate,
+  DateTime? taskdate,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{

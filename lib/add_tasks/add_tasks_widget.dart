@@ -31,6 +31,50 @@ class _AddTasksWidgetState extends State<AddTasksWidget> {
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+    _model.textFieldFocusNode2!.addListener(
+      () async {
+        final datePickedDate = await showDatePicker(
+          context: context,
+          initialDate: getCurrentTimestamp,
+          firstDate: DateTime(1900),
+          lastDate: DateTime(2050),
+          builder: (context, child) {
+            return wrapInMaterialDatePickerTheme(
+              context,
+              child!,
+              headerBackgroundColor: FlutterFlowTheme.of(context).primary,
+              headerForegroundColor: FlutterFlowTheme.of(context).info,
+              headerTextStyle:
+                  FlutterFlowTheme.of(context).headlineLarge.override(
+                        fontFamily: 'Outfit',
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+              pickerBackgroundColor:
+                  FlutterFlowTheme.of(context).secondaryBackground,
+              pickerForegroundColor: FlutterFlowTheme.of(context).primaryText,
+              selectedDateTimeBackgroundColor:
+                  FlutterFlowTheme.of(context).error,
+              selectedDateTimeForegroundColor:
+                  FlutterFlowTheme.of(context).info,
+              actionButtonForegroundColor:
+                  FlutterFlowTheme.of(context).primaryText,
+              iconSize: 24.0,
+            );
+          },
+        );
+
+        if (datePickedDate != null) {
+          safeSetState(() {
+            _model.datePicked = DateTime(
+              datePickedDate.year,
+              datePickedDate.month,
+              datePickedDate.day,
+            );
+          });
+        }
+      },
+    );
   }
 
   @override
@@ -255,19 +299,22 @@ class _AddTasksWidgetState extends State<AddTasksWidget> {
                                 await TasksRecord.collection
                                     .doc()
                                     .set(createTasksRecordData(
-                                      taskname: _model.textController1.text,
-                                      taskdate: _model.textController2.text,
+                                      taskname: '',
+                                      taskdate: _model.datePicked,
                                     ));
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'New task added!',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
+                                      'Task created successfully',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                     ),
-                                    duration: const Duration(milliseconds: 3250),
+                                    duration: const Duration(milliseconds: 4000),
                                     backgroundColor:
                                         FlutterFlowTheme.of(context).secondary,
                                   ),
@@ -293,61 +340,6 @@ class _AddTasksWidgetState extends State<AddTasksWidget> {
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 1.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE8E8E8),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 1.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE8E8E8),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 1.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE8E8E8),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 1.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE8E8E8),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 16.0, 16.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 1.0,
-                          decoration: const BoxDecoration(
-                            color: Color(0xFFE8E8E8),
-                          ),
                         ),
                       ),
                     ],

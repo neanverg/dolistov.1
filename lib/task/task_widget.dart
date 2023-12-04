@@ -880,7 +880,7 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                       Checkbox(
                                                                     value: _model
                                                                             .checkboxValue1 ??=
-                                                                        true,
+                                                                        false,
                                                                     onChanged:
                                                                         (newValue) async {
                                                                       setState(() =>
@@ -1137,7 +1137,7 @@ class _TaskWidgetState extends State<TaskWidget> with TickerProviderStateMixin {
                                                                       Checkbox(
                                                                     value: _model
                                                                             .checkboxValue2 ??=
-                                                                        true,
+                                                                        false,
                                                                     onChanged:
                                                                         (newValue) async {
                                                                       setState(() =>

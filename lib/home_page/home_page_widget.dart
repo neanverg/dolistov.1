@@ -428,7 +428,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 ),
                                           ),
                                           Text(
-                                            columnTasksRecord.taskdate,
+                                            columnTasksRecord.taskdate!
+                                                .toString(),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall,
                                           ),
