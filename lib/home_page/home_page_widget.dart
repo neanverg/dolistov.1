@@ -398,8 +398,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     snapshot.data!;
                                 return Column(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
                                   children: List.generate(
                                       columnTasksRecordList.length,
                                       (columnIndex) {
@@ -411,7 +413,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             columnTasksRecord.taskname,
